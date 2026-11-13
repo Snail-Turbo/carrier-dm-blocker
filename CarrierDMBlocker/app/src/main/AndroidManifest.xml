@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+      libxposed API 102 模块：
+        模块名 / 描述      -> android:label / android:description
+        入口/作用域/元数据 -> META-INF/xposed/{java_init.list,scope.list,module.prop}
+    -->
+    <application
+        android:allowBackup="false"
+        android:label="@string/module_name"
+        android:description="@string/module_description" />
+</manifest>

@@ -1,0 +1,38 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.example.carrierdmblocker'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.carrierdmblocker"
+        minSdk 29
+        targetSdk 34
+        versionCode 2
+        versionName "2.0"
+    }
+
+    buildTypes { release { minifyEnabled false } }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packaging {
+        resources {
+            merges += "META-INF/xposed/*"
+            excludes += "META-INF/*.kotlin_module"
+        }
+    }
+}
+
+dependencies {
+    compileOnly 'io.github.libxposed:api:102.0.0'
+    compileOnly 'androidx.annotation:annotation:1.9.1'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-Xlint:-deprecation' << '-Xlint:-unchecked'
+}

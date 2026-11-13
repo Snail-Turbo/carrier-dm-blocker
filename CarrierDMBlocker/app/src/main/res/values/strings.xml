@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="module_name">CarrierDMBlocker</string>
+    <string name="module_description">三家运营商预装 DM 拦截合集：联通 SystemHelper、移动 RegService、电信 CTAutoRegist</string>
+</resources>

@@ -1,17 +1,33 @@
-# Gradle / Android
-SystemHelperXposed/.gradle/
-SystemHelperXposed/build/
-SystemHelperXposed/app/build/
-SystemHelperXposed/local.properties
-SystemHelperXposed/.idea/
+# Gradle / Android 构建目录（任何工程）
+.gradle/
+build/
+app/build/
+local.properties
+.idea/
 *.iml
 *.hprof
 captures/
+build.log
 
 # 构建产物（发版走 Releases，不入库）
 *.zip
 *.apk
 dist/
+
+# dbfix 的中间产物（dbfix.dex 本身随模块入库，方便直接打包）
+carrier_dm-module/dbfix/out/
+carrier_dm-module/dbfix/classes.dex
+
+# 运行期文件
+carrier_dm-module/log.txt
+carrier_dm-module/uid/
+kernel-module/log.txt
+
+# 已被 v2.0 取代的按运营商拆分工程（仅本机保留）
+CTAutoXposed/
+RegServiceXposed/
+cta-module/
+rgs-module/
 
 # 根目录的本地笔记 / 临时文件（不公开）
 /INDEX.md
@@ -21,9 +37,11 @@ dist/
 /action.sh
 /action_lf.sh
 /log.txt
-kernel-module/log.txt
 
 # 系统垃圾
 .DS_Store
 Thumbs.db
 poster/*.png
+
+# 旧版打包脚本（对应已归档的 rgs-module）
+build_rgs_zip.py
